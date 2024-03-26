@@ -1,38 +1,70 @@
-dataset:
-  name: sise_generales_tsuc
-  columns:
-    - name: process_id
-    - name: process_dt
-    - name: id_day
-    - name: cod_suc
-    - name: txt_nom_suc
-      data_type: character varying
-    - name: cod_tipo_dir
-    - name: txt_direccion
-    - name: nro_cod_postal
-    - name: cod_zona_dir
-    - name: cod_colonia
-    - name: cod_municipio
-    - name: cod_dpto
-    - name: cod_pais
-    - name: cod_tipo_telef
-    - name: txt_telefono
-    - name: cod_tipo_iva
-    - name: nro_nit
-    - name: nro_pol_desde
-    - name: nro_pol_hasta
-    - name: aaaa_endoso
-    - name: nro_endoso_desde
-    - name: nro_endoso_hasta
-    - name: pje_igss
-    - name: sn_regional
-    - name: cod_suc_reg
-    - name: id_bco_default
-    - name: fec_cierre_diario
-    - name: sn_linea
-    - name: dias_desvio
-    - name: sn_emite_central
-    - name: txt_nom_corto
-    - name: sn_imp_rel_agentes
-    - name: cod_dre_sac
-    - name: columna_falsa
+dataset: sise_generales_tsuc
+columns:
+  - name: process_id
+  - name: process_dt
+  - name: id_day
+  - name: cod_suc
+  - name: txt_nom_suc
+    data_type: character varying
+  - name: cod_tipo_dir
+  - name: txt_direccion
+  - name: nro_cod_postal
+  - name: cod_zona_dir
+  - name: cod_colonia
+  - name: cod_municipio
+  - name: cod_dpto
+  - name: cod_pais
+  - name: cod_tipo_telef
+  - name: txt_telefono
+  - name: cod_tipo_iva
+  - name: nro_nit
+  - name: nro_pol_desde
+  - name: nro_pol_hasta
+  - name: aaaa_endoso
+  - name: nro_endoso_desde
+  - name: nro_endoso_hasta
+  - name: pje_igss
+  - name: sn_regional
+  - name: cod_suc_reg
+  - name: id_bco_default
+  - name: fec_cierre_diario
+  - name: sn_linea
+  - name: dias_desvio
+  - name: sn_emite_central
+  - name: txt_nom_corto
+  - name: sn_imp_rel_agentes
+  - name: cod_dre_sac
+  # - name: columna_falsa
+checks:
+  - row_count between 1000 and 2000
+  - missing_count(txt_nom_suc) = 0
+  # - invalid_percent(phone) < 1 %:
+      # valid format: phone number
+  - invalid_count(cod_pais) = 0:
+      valid min: 1
+      valid max: 6
+  - duplicate_count(cod_suc) = 0
+  - schema:
+      name: Any schema changes
+      warn:
+        when schema changes:
+          - column delete
+          - column add
+          - column index change
+          - column type change
+  # Add a row count check - https://go.soda.io/row-count
+  # - row_count > 0
+  - anomaly detection for row_count
+  # Add freshness check - https://go.soda.io/freshness
+  - freshness(date_first_purchase) < 19h
+  # Add validity checks - https://go.soda.io/invalid
+  # - invalid_count(email_address) = 0:
+  #     valid format: email
+  # Add missing value checks - https://go.soda.io/missing
+  - missing_count(sn_linea) = 0
+  # - missing_count(last_name) = 0
+  # - missing_count(email_address) = 0
+  # - missing_count(phone) = 0
+  # - missing_count(date_first_purchase) = 0
+  # Add duplicate value checks - https://go.soda.io/duplicate
+  # - duplicate_count(email_address) = 0

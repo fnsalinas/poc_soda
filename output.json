@@ -1,0 +1,19 @@
+{
+    "blocks": [
+        {
+            "type": "csv",
+            "text": "Column,Type\nprocess_id,text\nprocess_dt,timestamp with time zone\nid_day,date\ncod_suc,numeric\ntxt_nom_suc,character varying\ncod_tipo_dir,numeric\ntxt_direccion,character varying\nnro_cod_postal,numeric\ncod_zona_dir,numeric\ncod_colonia,numeric\ncod_municipio,numeric\ncod_dpto,numeric\ncod_pais,numeric\ncod_tipo_telef,numeric\ntxt_telefono,character varying\ncod_tipo_iva,numeric\nnro_nit,character varying\nnro_pol_desde,numeric\nnro_pol_hasta,numeric\naaaa_endoso,numeric\nnro_endoso_desde,numeric\nnro_endoso_hasta,numeric\npje_igss,numeric\nsn_regional,integer\ncod_suc_reg,numeric\nid_bco_default,numeric\nfec_cierre_diario,timestamp without time zone\nsn_linea,integer\ndias_desvio,numeric\nsn_emite_central,integer\ntxt_nom_corto,character varying\nsn_imp_rel_agentes,integer\ncod_dre_sac,character varying",
+            "title": "Schema"
+        },
+        {
+            "type": "csv",
+            "text": "Column,Event,Details\ncolumna_falsa,:icon-fail: Required Column Missing, \n",
+            "title": "Diagnostics"
+        }
+    ],
+    "preferredChart": "bars",
+    "valueLabel": "1 schema event(s)",
+    "valueSeries": {
+        "values": [
+            {
+                "label": 

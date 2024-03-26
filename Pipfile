@@ -3,6 +3,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[[source]]
+url = "https://pypi.cloud.soda.io"
+verify_ssl = true
+name = "pypicloudsoda"
+
 [packages]
 requests = "*"
 pandas = "*"
@@ -12,6 +17,7 @@ soda-core-postgres = "*"
 python-dotenv = "*"
 poc-soda-data-contracts = {editable = true, path = "."}
 pyyaml = "*"
+soda-scientific = {version = "*", index = "pypicloudsoda"}
 
 [dev-packages]
 autopep8 = "*"
