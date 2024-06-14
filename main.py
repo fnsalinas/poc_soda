@@ -14,6 +14,7 @@ app_main_path=os.environ["APP_MAIN_PATH"]
 datacontracts_path=os.environ["DATA_CONTRACTS_PATH"]
 postgresql_conn_path=os.environ["POSTGRESQL_CONNECTION_YML_PATH"]
 
+
 # Read the data contract file as a Python str
 dc_path=f"{app_main_path}/{datacontracts_path}/02_sise_generales_tsuc.yml"
 with open(dc_path) as infile:

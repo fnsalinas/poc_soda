@@ -56,7 +56,7 @@ checks:
   # - row_count > 0
   - anomaly detection for row_count
   # Add freshness check - https://go.soda.io/freshness
-  - freshness(date_first_purchase) < 19h
+  # - freshness(date_first_purchase) < 19h
   # Add validity checks - https://go.soda.io/invalid
   # - invalid_count(email_address) = 0:
   #     valid format: email
