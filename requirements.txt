@@ -1,0 +1,10 @@
+requests==*
+pandas==*
+psycopg2-binary==*
+soda-core-contracts==*
+soda-core-postgres==*
+python-dotenv==*
+pyyaml==*
+soda-scientific=={version=*,index=pypicloudsoda}
+autopep8==*
+ipykernel==*

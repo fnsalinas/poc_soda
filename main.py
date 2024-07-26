@@ -16,7 +16,7 @@ postgresql_conn_path=os.environ["POSTGRESQL_CONNECTION_YML_PATH"]
 
 
 # Read the data contract file as a Python str
-dc_path=f"{app_main_path}/{datacontracts_path}/02_sise_generales_tsuc.yml"
+dc_path=f"{app_main_path}/{datacontracts_path}/03_vw_dim_lob.yml"
 with open(dc_path) as infile:
     data_contract_yaml_str: str = infile.read()
 
@@ -32,10 +32,12 @@ print(sodacl_yaml_str)
 
 # Execute the translated SodaCL checks in a scan
 scan = Scan()
-scan.set_data_source_name("hdi")
+scan.set_data_source_name("adp")
 scan.add_configuration_yaml_file(file_path=postgresql_conn_path)
 scan.add_sodacl_yaml_str(sodacl_yaml_str)
 scan.execute()
+
+
 scan.assert_no_checks_fail()
 scan.get_checks_fail()[0].get_dict()
 

@@ -1,0 +1,12 @@
+dataset: vw_dim_lob
+
+columns:
+  - name: lob_sk
+  - name: source_system
+  - name: lob_group1_description
+  - name: lob_group2_description
+  - name: lob_code
+  - name: lob_description
+  - name: database_operation_type
+  - name: origin_ts
+  - name: current_record_flag
