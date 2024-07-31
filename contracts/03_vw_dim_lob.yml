@@ -10,3 +10,5 @@ columns:
   - name: database_operation_type
   - name: origin_ts
   - name: current_record_flag
+  - name: columna_falsa
+  
