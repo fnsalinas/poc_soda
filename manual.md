@@ -51,14 +51,14 @@ Los paquetes a instalar son:
     ```bash
     cat >requirements_prod.txt <<EOL
     requests==2.31.0
-    pandas==1.5.3
     psycopg2-binary==2.9.9
     soda-core==3.2.1
     soda-core-contracts==3.2.1
     soda-core-postgres==3.2.1
+    soda-core-redshift==3.2.1
+    soda-core-pandas-dask==3.2.1
     python-dotenv==1.0.1
     pyyaml==6.0.1
-    soda-core-redshift==3.2.1
     EOL
     ```
 2. Instalar paquetes
