@@ -17,6 +17,7 @@ soda-core-postgres = "*"
 python-dotenv = "*"
 pyyaml = "*"
 soda-scientific = {version = "*", index = "pypicloudsoda"}
+jupyterlab = "*"
 
 [dev-packages]
 autopep8 = "*"
